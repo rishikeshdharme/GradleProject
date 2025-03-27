@@ -30,13 +30,19 @@ public class PlayerController {
 
     @PutMapping("/updateplayers/{id}")
     public Players updatePlayer(@RequestBody Players p){
-        return playersService.addPlayer(p);
+        return playersService.updatePlayer(p);
     }
 
     @DeleteMapping("/deleteplayers/{id}")
     public void deletePlayers(@PathVariable int id) {
 
         playersService.deletePlayer(id);
+    }
+
+    @GetMapping("/getbyid/{id}")
+    public Players getById(@PathVariable int id)
+    {
+        return playersService.searchBYId(id);
     }
 
 
