@@ -1,5 +1,6 @@
 package com.example.All_About_Gradle.Controller;
 
+import com.example.All_About_Gradle.Entity.PlayerBasicInfo;
 import com.example.All_About_Gradle.Entity.Players;
 import com.example.All_About_Gradle.Service.PlayersService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ public class PlayerController {
     }
 
     @GetMapping("/getplayers")
-    public List<Players> getPlayers() {
+    public List<PlayerBasicInfo> getPlayers() {
        return playersService.getAllPlayers();
     }
 
@@ -40,7 +41,7 @@ public class PlayerController {
     }
 
     @GetMapping("/getbyid/{id}")
-    public Players getById(@PathVariable int id)
+    public PlayerBasicInfo getById(@PathVariable int id)
     {
         return playersService.searchBYId(id);
     }
